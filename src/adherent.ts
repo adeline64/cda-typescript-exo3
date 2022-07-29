@@ -5,7 +5,7 @@ export class Adherent {
     private nom: string;
     private prenom : string;
     private budget : Budget;
-    private telephone : number;
+    private telephone : string;
     private email : string;
     private password : string | undefined;
 
@@ -16,26 +16,27 @@ export class Adherent {
         this.nom = nom;
         this.prenom = prenom
         this.budget = new Budget(900,[])
-        this.telephone = telephone
+        this.telephone = "telephone"
         this.email = "email"
-        this.password = password
+        this.password = "password"
     }
     
 
     create(){
-        document.getElementById("formSave").addEventListener("click", function() {
+        const buttonSave = document.getElementById("btnSave") as HTMLButtonElement
+        buttonSave.addEventListener("click", function() {
             // Récupération des champs
-            var nom = document.getElementById("nom").value;
-            var prenom = document.getElementById("prenom").value;
-            const telephone = document.getElementById("telephone").value;
-            const email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
+            var nom = document.getElementById("formSaveNom")?.value;
+            var prenom = document.getElementById("formSavePrenom")?.value;
+            const telephone = document.getElementById("formSaveTelephone")?.value;
+            const email = document.getElementById("formSaveEmail")?.value;
+            var password = document.getElementById("formSavePassword")?.value;
           
             if (nom && prenom && telephone && email && password) {
-              // Nouvelle ligne
-              const movie = { email: email, password: password };
+              // Nouvelle personne
+              const movie = { nom: nom, prenom: prenom, telephone: telephone, email: email, password: password };
           
-              // Ajout de la nouvelle ligne
+              // Ajout de la nouvelle personne
               movies.push(movie);
             }else{
                 alert("Désolé mais impossible de vous inscrire")

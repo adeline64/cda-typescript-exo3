@@ -8,22 +8,24 @@ var Adherent = /** @class */ (function () {
         this.nom = nom;
         this.prenom = prenom;
         this.budget = new budget_1.Budget(900, []);
-        this.telephone = telephone;
+        this.telephone = "telephone";
         this.email = "email";
-        this.password = password;
+        this.password = "password";
     }
     Adherent.prototype.create = function () {
-        document.getElementById("formSave").addEventListener("click", function () {
+        var buttonSave = document.getElementById("btnSave");
+        buttonSave.addEventListener("click", function () {
+            var _a, _b, _c, _d, _e;
             // Récupération des champs
-            var nom = document.getElementById("nom").value;
-            var prenom = document.getElementById("prenom").value;
-            var telephone = document.getElementById("telephone").value;
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
+            var nom = (_a = document.getElementById("formSaveNom")) === null || _a === void 0 ? void 0 : _a.value;
+            var prenom = (_b = document.getElementById("formSavePrenom")) === null || _b === void 0 ? void 0 : _b.value;
+            var telephone = (_c = document.getElementById("formSaveTelephone")) === null || _c === void 0 ? void 0 : _c.value;
+            var email = (_d = document.getElementById("formSaveEmail")) === null || _d === void 0 ? void 0 : _d.value;
+            var password = (_e = document.getElementById("formSavePassword")) === null || _e === void 0 ? void 0 : _e.value;
             if (nom && prenom && telephone && email && password) {
-                // Nouvelle ligne
-                var movie = { email: email, password: password };
-                // Ajout de la nouvelle ligne
+                // Nouvelle personne
+                var movie = { nom: nom, prenom: prenom, telephone: telephone, email: email, password: password };
+                // Ajout de la nouvelle personne
                 movies.push(movie);
             }
             else {
