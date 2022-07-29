@@ -23,7 +23,7 @@
 
         <div class="col-sm-offset-4 col-sm-4">
             <!-- solde de l'utilisateur-->
-            <h2>Solde disponible : </h2>
+            <h2 id="solde">Solde disponible : </h2>
         </div>
     </div>
 
@@ -81,17 +81,26 @@
                         <label for="validate-text">formulaire de connexion</label>
                         <div class="input-group">
                             <!-- mettre l'email-->
-                            <input type="email" class="form-control" name="validate-text" id="formSaveEmail" placeholder="Email" required>
+                            <input type="email" class="form-control" name="validate-text" id="Email" placeholder="Email" required>
                             <br><br>
                             <!-- mettre password-->
-                            <input type="password" class="form-control" name="validate-text" id="formSavePassword" placeholder="password" required>
+                            <input type="password" class="form-control" name="validate-text" id="Password" placeholder="password" required>
                             <br><br>
                         </div>
                     </div>
                     <br>
                     <!-- button valider connexion -->
-                    <button type="submit" class="btn btn-primary col-xs-12" disabled>Valider</button>
+                    <button type="submit" class="btn btn-primary col-xs-12" id="connect" disabled>Valider</button>
             </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="container suppression">
+        <div class="row">
+            <!-- Supprimer le compte -->
+            <button type="button" class="btn btn-info" id="supprimer">Supprimer le compte</button>
         </div>
     </div>
 
@@ -112,8 +121,9 @@
                         <label for="validate-text">Ajout</label>
                         <div class="input-group">
                             <!-- input ajout argent -->
-                            <input type="text" class="form-control" name="validate-text" id="validate-text" placeholder="Validate Text" required>
+                            <input type="text" class="form-control" name="validate-text" id="validate-text" placeholder="ajouter argent" required>
                         </div>
+                        <br><br>
                     </div>
                     <!-- button validation ajout argent -->
                     <button type="submit" class="btn btn-primary col-xs-12" disabled>Valider</button>
@@ -136,8 +146,9 @@
                         <label for="validate-text">Retirer</label>
                         <div class="input-group">
                             <!-- input retirer argent-->
-                            <input type="text" class="form-control" name="validate-text" id="validate-text" placeholder="Validate Text" required>
+                            <input type="text" class="form-control" name="validate-text" id="validate-text" placeholder="Retirer argent" required>
                         </div>
+                        <br><br>
                     </div>
                     <!-- button valider retirer argent -->
                     <button type="submit" class="btn btn-primary col-xs-12" disabled>Valider</button>

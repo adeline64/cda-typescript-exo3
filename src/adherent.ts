@@ -26,11 +26,16 @@ export class Adherent {
         const buttonSave = document.getElementById("btnSave") as HTMLButtonElement
         buttonSave.addEventListener("click", function() {
             // Récupération des champs
-            var nom = document.getElementById("formSaveNom")?.value;
-            var prenom = document.getElementById("formSavePrenom")?.value;
-            const telephone = document.getElementById("formSaveTelephone")?.value;
-            const email = document.getElementById("formSaveEmail")?.value;
-            var password = document.getElementById("formSavePassword")?.value;
+            var nom = (document.getElementById("formSaveNom") as HTMLInputElement).value
+            var prenom = (document.getElementById("formSavePrenom") as HTMLInputElement).value
+            var telephone = (document.getElementById("formSaveTelephone") as HTMLInputElement).value
+            var email = (document.getElementById("formSaveEmail") as HTMLInputElement).value
+            var password = (document.getElementById("formSavePassword") as HTMLInputElement).value
+
+            // var prenom = document.getElementById("formSavePrenom")?.value;
+            // const telephone = document.getElementById("formSaveTelephone")?.value;
+            // const email = document.getElementById("formSaveEmail")?.value;
+            // var password = document.getElementById("formSavePassword")?.value;
           
             if (nom && prenom && telephone && email && password) {
               // Nouvelle personne
@@ -38,6 +43,7 @@ export class Adherent {
           
               // Ajout de la nouvelle personne
               movies.push(movie);
+
             }else{
                 alert("Désolé mais impossible de vous inscrire")
             }
@@ -53,7 +59,10 @@ export class Adherent {
     }
 
     delete(){
-
+        const buttonSupprimer = document.getElementById("supprimer") as HTMLButtonElement
+        buttonSupprimer.addEventListener("click", function() {
+            delete.buttonSupprimer
+        });
     }
 
     voirBudget(){
@@ -69,7 +78,22 @@ export class Adherent {
     }
 
     connexion(){
-        
+        const buttonConnect = document.getElementById("connect") as HTMLButtonElement
+        buttonConnect.addEventListener("click", function() {
+            // Récupération des champs
+            var email = (document.getElementById("Email") as HTMLInputElement).value
+            var password = (document.getElementById("Password") as HTMLInputElement).value
+            if (email && password) {
+              // personne connecter
+              const movie = { email: email, password: password };
+          
+             //connexion de la nouvelle personne
+             
+
+            }else{
+                alert("Désolé mais impossible de vous connecter")
+            }
+        });
     }
     
 }

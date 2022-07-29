@@ -15,13 +15,16 @@ var Adherent = /** @class */ (function () {
     Adherent.prototype.create = function () {
         var buttonSave = document.getElementById("btnSave");
         buttonSave.addEventListener("click", function () {
-            var _a, _b, _c, _d, _e;
             // Récupération des champs
-            var nom = (_a = document.getElementById("formSaveNom")) === null || _a === void 0 ? void 0 : _a.value;
-            var prenom = (_b = document.getElementById("formSavePrenom")) === null || _b === void 0 ? void 0 : _b.value;
-            var telephone = (_c = document.getElementById("formSaveTelephone")) === null || _c === void 0 ? void 0 : _c.value;
-            var email = (_d = document.getElementById("formSaveEmail")) === null || _d === void 0 ? void 0 : _d.value;
-            var password = (_e = document.getElementById("formSavePassword")) === null || _e === void 0 ? void 0 : _e.value;
+            var nom = document.getElementById("formSaveNom").value;
+            var prenom = document.getElementById("formSavePrenom").value;
+            var telephone = document.getElementById("formSaveTelephone").value;
+            var email = document.getElementById("formSaveEmail").value;
+            var password = document.getElementById("formSavePassword").value;
+            // var prenom = document.getElementById("formSavePrenom")?.value;
+            // const telephone = document.getElementById("formSaveTelephone")?.value;
+            // const email = document.getElementById("formSaveEmail")?.value;
+            // var password = document.getElementById("formSavePassword")?.value;
             if (nom && prenom && telephone && email && password) {
                 // Nouvelle personne
                 var movie = { nom: nom, prenom: prenom, telephone: telephone, email: email, password: password };
@@ -38,6 +41,10 @@ var Adherent = /** @class */ (function () {
     Adherent.prototype.update = function () {
     };
     Adherent.prototype["delete"] = function () {
+        var buttonSupprimer = document.getElementById("supprimer");
+        buttonSupprimer.addEventListener("click", function () {
+            delete .buttonSupprimer;
+        });
     };
     Adherent.prototype.voirBudget = function () {
         return this.budget.GetBudget();
@@ -50,6 +57,20 @@ var Adherent = /** @class */ (function () {
         return retur;
     };
     Adherent.prototype.connexion = function () {
+        var buttonConnect = document.getElementById("connect");
+        buttonConnect.addEventListener("click", function () {
+            // Récupération des champs
+            var email = document.getElementById("Email").value;
+            var password = document.getElementById("Password").value;
+            if (email && password) {
+                // personne connecter
+                var movie = { email: email, password: password };
+                //connexion de la nouvelle personne
+            }
+            else {
+                alert("Désolé mais impossible de vous connecter");
+            }
+        });
     };
     return Adherent;
 }());
