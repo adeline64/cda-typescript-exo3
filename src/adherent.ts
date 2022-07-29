@@ -5,19 +5,17 @@ export class Adherent {
     private nom: string;
     private prenom : string;
     private budget : Budget;
-    private role:string[] = [];
     private telephone : number;
     private email : string;
     private password : string | undefined;
 
 
     //constructor 
-    constructor(nom: string, prenom: string, telephone:number, email:string, password:string) {
+    constructor(nom: string, prenom: string) {
         this.id = Date.now.toString()
         this.nom = nom;
         this.prenom = prenom
         this.budget = new Budget(900,[])
-        this.role = []
         this.telephone = telephone
         this.email = "email"
         this.password = password
@@ -25,19 +23,24 @@ export class Adherent {
     
 
     create(){
-        document.getElementById("form-save").addEventListener("click", function() {
+        document.getElementById("formSave").addEventListener("click", function() {
             // Récupération des champs
+            var nom = document.getElementById("nom").value;
+            var prenom = document.getElementById("prenom").value;
+            const telephone = document.getElementById("telephone").value;
             const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
+            var password = document.getElementById("password").value;
           
-            if (email && password) {
+            if (nom && prenom && telephone && email && password) {
               // Nouvelle ligne
               const movie = { email: email, password: password };
           
               // Ajout de la nouvelle ligne
               movies.push(movie);
+            }else{
+                alert("Désolé mais impossible de vous inscrire")
             }
-          });
+        });
     }
 
     read(){
@@ -62,6 +65,10 @@ export class Adherent {
         localStorage.setItem("user",JSON.stringify(this))
 
         return retur
+    }
+
+    connexion(){
+        
     }
     
 }
