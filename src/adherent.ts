@@ -42,6 +42,7 @@ export class Adherent {
               const movie = { nom: nom, prenom: prenom, telephone: telephone, email: email, password: password };
           
               // Ajout de la nouvelle personne
+              const movies = [];
               movies.push(movie);
 
             }else{
@@ -88,7 +89,7 @@ export class Adherent {
               const movie = { email: email, password: password };
           
              //connexion de la nouvelle personne
-             
+
 
             }else{
                 alert("Désolé mais impossible de vous connecter")

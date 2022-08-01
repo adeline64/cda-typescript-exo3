@@ -29,6 +29,7 @@ var Adherent = /** @class */ (function () {
                 // Nouvelle personne
                 var movie = { nom: nom, prenom: prenom, telephone: telephone, email: email, password: password };
                 // Ajout de la nouvelle personne
+                var movies = [];
                 movies.push(movie);
             }
             else {
