@@ -45,6 +45,9 @@ export class Adherent {
               const movies = [];
               movies.push(movie);
 
+              // enregistrement ds localStorage
+              localStorage.setItem("user",JSON.stringify(this))
+
             }else{
                 alert("Désolé mais impossible de vous inscrire")
             }
