@@ -65,7 +65,10 @@ export class Adherent {
     delete(){
         const buttonSupprimer = document.getElementById("supprimer") as HTMLButtonElement
         buttonSupprimer.addEventListener("click", function() {
-            delete.buttonSupprimer
+            window.onbeforeunload = function() {
+                localStorage.removeItem(key);
+                return '';
+            };        
         });
     }
 
